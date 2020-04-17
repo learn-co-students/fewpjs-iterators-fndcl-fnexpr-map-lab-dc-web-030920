@@ -117,9 +117,7 @@ For the rest of of these examples, we'll use the arrow function.
 ## Demonstrate `map()` With Complex Data Structures
 
 Let's use the `map()` function on a trickier data structure — a list of robots.
-To start things off, we have an array of robots. Now, let's activate all of
-them. An activated robot needs to be marked as such using the `isActivated`
-boolean, as well as have its number of modes doubled:
+To start things off, we have an array of robots. Now, let's create an array of all their names, but in all uppercase letters!
 
 ```js
 const robots = [
@@ -130,22 +128,14 @@ const robots = [
 ];
 
 const activatedRobots = robots.map(function (robot) {
-  return Object.assign({}, robot, {
-    modes: robot.modes * 2,
-    isActivated: true,
-  });
+  return robot.name.toUpperCase()
 });
 
 console.log(activatedRobots);
 
 /*
  Result:
- [
-   { name: 'Johnny 5', modes: 10, isActivated: true },
-   { name: 'C3PO', modes: 6, isActivated: true },
-   { name: 'Sonny', modes: 5, isActivated: true },
-   { name: 'Baymax', modes: 3, isActivated: true }
- ]
+ ['JOHNNY 5', 'C3PO', 'SONNY', 'BAYMAX']
 */
 ```
 
